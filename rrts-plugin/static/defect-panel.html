@@ -1,0 +1,32 @@
+<div id="defect-panel"
+  class="tw-absolute tw-items-center tw-justify-center tw-hidden tw-p-4 tw-mx-auto tw-my-1 tw-text-black">
+  <div class="tw-flex">
+    <div class="tw-flex tw-m-1">
+      <select id="rrts-defect-selector" class="tw-px-2 tw-py-1 tw-mx-1"></select>
+      <select id="rrts-lane-code-selector" class="tw-px-2 tw-py-1 tw-mx-1">
+        <option>L-3</option>
+        <option>L-2</option>
+        <option selected>L-1</option>
+        <option>R-1</option>
+        <option>R-2</option>
+        <option>R-3</option>
+      </select>
+    </div>
+    <div class="tw-flex tw-m-1">
+      <input class="tw-w-24 tw-px-2 tw-py-1 tw-mx-1" placeholder="Length" id="rrts-defect-length" />
+      <input class="tw-w-24 tw-px-2 tw-py-1 tw-mx-1" placeholder="Width" id="rrts-defect-width" />
+      <input class="tw-w-24 tw-px-2 tw-py-1 tw-mx-1" placeholder="Qty" id="rrts-quantity" />
+      <select class="tw-px-2 tw-py-1 tw-mx-1" id="rrts-unit">
+        <option selected>Area</option>
+        <option>Item</option>
+      </select>
+    </div>
+    <div class="tw-flex tw-m-1">
+      <button class="tw-px-2 tw-py-1 tw-text-white tw-bg-green-500 tw-rounded hover:tw-bg-green-400"
+        id="rrts-insert-button">Insert</button>
+      <div class="tw-ml-2 tw-invisible tw-py-1 tw-px-2 tw-text-xl" id="rrt-indicator-container">
+        <i id="rrts-indicator" class="fa fa-spinner fa-spin"></i>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+#defect-legend {
+  left: 300px;
+  z-index: 1000;
+}
+
+#defect-legend-list {
+  color: #000 !important;
+  text-align: left;
+}
+
+#defect-legend-list > li {
+  list-style-type: none;
+}
+
+#defect-calculator {
+  right: 180px;
+  z-index: 1000;
+}
+
+#defect-calculator > div {
+  background-color: rgba(255, 255, 255, 0.75);
+  margin-top: 5px;
+  padding: 4px;
+}
+
+#defect-panel {
+  bottom: 125px;
+  left: 300px;
+  right: 180px;
+  z-index: 1000;
+}
+
+.toggle__dot {
+  top: -0.25rem;
+  left: -0.25rem;
+  transition: all 0.3s ease-in-out;
+}
+
+input:checked ~ .toggle__dot {
+  transform: translateX(100%);
+  background-color: #48bb78;
+}

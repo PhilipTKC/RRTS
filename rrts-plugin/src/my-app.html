@@ -1,0 +1,77 @@
+<div class="tw-container tw-mx-auto">
+  <div class="tw-p-8">
+    <div class="tw-my-4">
+      <h1 class="tw-text-xl tw-font-bold">Road Runner To Spreadsheet Extension</h1>
+    </div>
+    <div>
+      <label for="spreadsheet-id" class="tw-text-xl tw-font-bold">Spreadsheet ID</label>
+      <input
+        class="tw-w-full tw-max-w-xl tw-px-2 tw-py-2 tw-my-2 tw-bg-indigo-300 tw-rounded tw-shadow-md md:tw-my-0 md:tw-ml-2 focus:tw-outline-none"
+        name="spreadsheet-id" value.bind="spreadsheetId" />
+      <button
+        class="tw-py-2 tw-my-2 tw-font-bold tw-text-white tw-bg-indigo-500 tw-rounded tw-px-4 md:tw-ml-2 hover:tw-bg-indigo-400 focus:tw-outline-none"
+        click.trigger="saveSpreadsheetId()">
+        Save ID
+      </button>
+    </div>
+    <div class="tw-my-4" if.bind="!spreadsheetId">
+      <p class="tw-my-2">Spreadsheet ID found in URL</p>
+      <p class="tw-my-2">https://docs.google.com/spreadsheets/d/<mark>some-spreadsheet-id</mark>/edit#gid=0</p>
+      <p class="tw-my-2">Refresh Road Runner when saving Spreadsheet ID (First time only)</p>
+    </div>
+    <div class="tw-mt-8">
+      <h1 class="tw-text-xl tw-font-bold">List of Defect Options</h1>
+      <div class="tw-my-4">
+        <ul id="defects">
+          <li repeat.for="defect of defectOptions" class="tw-py-1 tw-my-1 tw-cursor-pointer">
+            <span class="tw-inline-block tw-w-96">
+              <span class="tw-mr-2" if.bind="$index > 1 && $index < 11">
+                <span class="tw-font-bold">Ctrl</span> + <span class="tw-font-bold">(Alt/Command)</span> +
+                <span class="tw-font-bold">${$index - 1}</span>
+              </span>
+              <span class="tw-mr-2" if.bind="$index === 11">
+                <span class="tw-font-bold">Ctrl</span> + <span class="tw-font-bold">(Alt/Command)</span> +
+                <span class="tw-font-bold">0</span>
+              </span>
+              <span class="tw-mr-2" if.bind="$index === 12">
+                <span class="tw-font-bold">Ctrl</span> + <span class="tw-font-bold">(Alt/Command)</span> +
+                <span class="tw-font-bold">-</span>
+              </span>
+              <span class="tw-mr-2" if.bind="$index === 13"><span class="tw-font-bold">Ctrl</span> + <span
+                  class="tw-font-bold">(Alt/Command)</span> +
+                <span class="tw-font-bold">=</span>
+              </span>
+              ${defect}
+            </span>
+            <span class="tw-px-2 tw-py-1 tw-ml-2 tw-bg-red-200 tw-text-gray-50 hover:tw-bg-red-300"
+              click.trigger="removeDefect($index)" if.bind="$index > 1">
+              X
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex my-4">
+        <input class="tw-border-gray-100 tw-rounded tw-shadow-md tw-px-4 tw-py-2 tw-border" value.bind="defect" />
+        <button class="tw-bg-indigo-500 tw-text-white tw-rounded tw-px-4 tw-py-2 tw-ml-2"
+          click.trigger="saveDefect()">Add Defect</button>
+      </div>
+
+      <div class="tw-my-4">
+        <button class="tw-px-4 tw-py-2 tw-text-white tw-bg-yellow-400 tw-rounded" click.trigger="reset()">Reset
+          Defects</button>
+      </div>
+
+      <div class="tw-text-xl tw-my-10">
+        <p>Refresh Road Runner when making changes to the defect list</p>
+      </div>
+
+      <div class="tw-mt-2">
+        <p class="tw-my-2">The first 10 items are keybound to the following.</p>
+        <p class="tw-my-2 tw-font-bold">Ctrl + (Alt/Command) + 1 to 0 (Digits)</p>
+        <p class="tw-my-2">The next 2 items are keybound to the following.</p>
+        <p class="tw-my-2 tw-font-bold">Ctrl + (Alt/Command) + - (Minus) / = (Equals)</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div id="defect-calculator" class="tw-absolute tw-top-0 tw-right-0 tw-hidden tw-p-4">
+  <div class="flex">
+    <button id="rrts-marker-button"
+      class="tw-px-2 tw-py-1 tw-mx-1 tw-text-white tw-bg-indigo-500 hover:tw-bg-indigo-400 tw-rounded">
+      Mark Current Point
+    </button>
+    <button id="rrts-reset-button"
+      class="tw-px-2 tw-py-1 tw-mx-1 tw-text-white tw-bg-gray-500 hover:tw-bg-gray-400 tw-rounded">
+      Reset
+    </button>
+  </div>
+  <div class="tw-text-black" id="rrts-calculations">
+    <span class="tw-mx-1" id="rrts-moving-point"> 0 </span>
+    <span class="tw-hidden tw-mx-1" id="rrts-mp-loader">
+      <i class="fa fa-spinner fa-spin"></i>
+    </span>
+    <span class="tw-mx-1">-</span>
+    <span class="tw-mx-1" id="rrts-marked-point">0</span>
+    <span class="tw-mx-1">=</span>
+    <span class="tw-mx-1" id="rrts-calculation">0</span>
+  </div>
+  <div class="tw-bg-green-300">
+    <span id="rrts-marked-latlng" class="tw-text-black"></span>
+  </div>
+</div>

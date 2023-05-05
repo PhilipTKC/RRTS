@@ -1,0 +1,43 @@
+{
+    "manifest_version": 2,
+    "description": "Road Runner To Spreadsheet",
+    "name": "Road Runner To Spreadsheet",
+    "options_page": "../index.html#",
+    "version": "1.0",
+    "background": {
+        "scripts": [
+            "static/background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "css": [
+                "static/rrts-style.css",
+                "static/style.css"
+            ],
+            "js": [
+                "static/content.js"
+            ],
+            "matches": [
+                "*://*.argonautltd.co.nz/*"
+            ]
+        }
+    ],
+    "icons": {
+        "16": "static/16.png",
+        "48": "static/48.png",
+        "128": "static/128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "contextMenus"
+    ],
+    "web_accessible_resources": [
+        "static/calculator.html",
+        "static/defect-legend.html",
+        "static/defect-panel.html"
+    ]
+}
